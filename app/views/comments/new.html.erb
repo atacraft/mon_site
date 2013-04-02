@@ -1,0 +1,10 @@
+<%- model_class = Comment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human %></h1>
+</div>
+<% if (@comment.user_id != nil and @comment.post_id != nil )%>
+	<%= render :partial => 'form' %>
+<% else %>
+	<% flash[:notice] = "Sorry, you hove to select a post before adding a comment." %>
+	<p class="well"><%= link_to "Here is our post list.", posts_path %></p>
+<% end %>

@@ -1,0 +1,23 @@
+
+<div>
+
+
+
+<div class="well pull-right">
+  <h4>Log in form</h4>
+  <div class="from-horizontal">
+    <%= form_tag login_path do%>
+        <div class="control-group">
+    	<%= text_field :user, :login, placeholder: "login" %>
+    	</div>
+    	<div class="control-group">
+    	<%= password_field :user, :password, placeholder: "password" %>
+        </div>
+        <div class="control-group">
+    	<%= submit_tag "Submit", class: "btn btn-success" %>
+      <%= link_to "It's my fisrt time", new_user_path, class: "btn btn-danger" %>
+        </div>
+    <% end %>
+   </div>           
+</div>
+</div>

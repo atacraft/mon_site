@@ -1,0 +1,20 @@
+<%= form_tag comments_path, :html => { :class => 'form-horizontal' } do %>
+  <h5>Make a comment</h5>
+  <div class="control-group">
+    <div class="controls">
+      <%= text_area :comment, :opinion, :class => 'text_area span12' %>
+    </div>
+  </div>
+  
+      <%= hidden_field :comment, :post_id, value: @post.id, :class => 'number_field' %>
+   
+  
+      <%= hidden_field :comment, :user_id, value: session[:user_id], :class => 'number_field' %>
+    
+
+  <div class="form-actions">
+    <%= submit_tag "Comment", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                comments_path, :class => 'btn' %>
+  </div>
+<% end %>
